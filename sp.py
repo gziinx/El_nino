@@ -54,15 +54,15 @@ t_sp_25_ing = buscar_dados(2025)
 t_sp_26_ing = buscar_dados(2026)
 
 # Etapa bronze concluida (dados brutos de 2025 e 2026 em csv)
-t_sp_25_ing.to_csv(
-    "t_sp_25_ing.csv",
-    index=False
-)
+# t_sp_25_ing.to_csv(
+#     "t_sp_25_ing.csv",
+#     index=False
+# )
 
-t_sp_26_ing.to_csv(
-    "t_sp_26_ing.csv",
-    index=False
-)
+# t_sp_26_ing.to_csv(
+#     "t_sp_26_ing.csv",
+#     index=False
+# )
 
 #
 # ETAPA SILVER
@@ -80,14 +80,14 @@ print(t_sp_25_ing.info())
 print(t_sp_26_ing.info())
 
 # Alterando o tipo da data que estava str
-t_sp_25_ing["Data"] = pd.to_datetime(
-        t_sp_25_ing["Data"],
+t_sp_25_ing["time"] = pd.to_datetime(
+        t_sp_25_ing["time"],
         format="%Y-%m-%d",
         errors="raise"
     )
 
-t_sp_26_ing["Data"] = pd.to_datetime(
-        t_sp_26_ing["Data"],
+t_sp_26_ing["time"] = pd.to_datetime(
+        t_sp_26_ing["time"],
         format="%Y-%m-%d",
         errors="raise"
     )
@@ -98,7 +98,9 @@ t_sp_25_ing = t_sp_25_ing.rename(columns={"time": "Data",
                                              "temperature_2m_max": "Temperatura_maxima",
                                                "temperature_2m_min": "Temperatura_minima",
                                                 "wind_direction_10m_dominant": "Direcao_vento",
-                                                "wind_speed_10m_mean": "Velocidade_vento"
+                                                "wind_speed_10m_mean": "Velocidade_vento",
+                                                "precipitation_probability_max": "Probabilidade_precipitacao",
+                                                "rain_sum": "Soma_chuva"
                                                 })
 
 t_sp_26_ing = t_sp_26_ing.rename(columns={"time": "Data",
@@ -106,7 +108,9 @@ t_sp_26_ing = t_sp_26_ing.rename(columns={"time": "Data",
                                              "temperature_2m_max": "Temperatura_maxima",
                                                "temperature_2m_min": "Temperatura_minima",
                                                 "wind_direction_10m_dominant": "Direcao_vento",
-                                                "wind_speed_10m_mean": "Velocidade_vento"
+                                                "wind_speed_10m_mean": "Velocidade_vento",
+                                                "precipitation_probability_max": "Probabilidade_precipitacao",
+                                                "rain_sum": "Soma_chuva"
                                                 })
 
 

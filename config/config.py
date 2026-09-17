@@ -9,5 +9,7 @@ VARIAVEIS = [
     "temperature_2m_max",
     "temperature_2m_min",
     "wind_direction_10m_dominant",
-    "wind_speed_10m_mean"
+    "wind_speed_10m_mean",
+    "precipitation_probability_max", 
+    "rain_sum"
 ]

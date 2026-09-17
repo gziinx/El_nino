@@ -40,3 +40,13 @@ t_sp_26_ddm["direcao_cardinal"] = t_sp_26_ddm[
 ].apply(classificar_direcao)
 
 print(t_sp_25_ddm.tail())
+
+t_sp_25_ddm.to_csv(
+    "t_sp_25_ddm.csv",
+    index=False
+)
+
+t_sp_26_ddm.to_csv(
+    "t_sp_26_ddm.csv",
+    index=False
+)
